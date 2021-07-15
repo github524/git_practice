@@ -29,12 +29,13 @@ The index.html file contains the styles and scripts to make the site work in the
 ### What the site does
 
 When you click the button marked "Inspire Me" the following happens:
-1 Random string selected from array of quoteArray
-2 Random string selected from authorArray
-3 Random boolean selected from boolArray
-4 Random integer generated between 1 and 754.
-5 Random date calculated as current  year - random integer
-6 Random strings, date and integer are returned to the blockquote.
+
+1. Random string selected from array of quoteArray
+2. Random string selected from authorArray
+3. Random boolean selected from boolArray
+4. Random integer generated between 1 and 754.
+5. Random date calculated as current  year - random integer
+6. Random strings, date and integer are returned to the blockquote.
 
 You can view the JavaScript code used by selecting the drop down on the page.
 
