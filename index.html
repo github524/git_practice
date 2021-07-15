@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>IT Change Career</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta description content="">
+        <meta keywords content="">
+        
+        <!-- Bootstrap v5.0.2 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Code sstyling by Prism -->
+        <link href="prism.css" rel="stylesheet">
+        <!-- GitHub icon from iconify.design -->
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script>
+        // Generates a random saying, attributes it a random author on a random date
+    function mixedM() {
+    
+    let sayingArray = [
+        '\"The greatest glory in living lies not in never falling, but in rising every time we fall.\"',
+        '\"The way to get started is to quit talking and begin doing.\"',
+        '\"Life is what happens when you are busy making other plans\"',
+        '\"If life were predictable it would cease to be life, and be without flavor.\"',
+        "\"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.\"",
+    ];
+    let authArray = [
+        'Nelson Mandela',
+        'Walt Disney',
+        'John Lennon',
+        'Eleanor Roosevelt',
+        'Oprah Winfrey',
+    ];
+    let boolArray = [
+        true,
+        false
+    ]
+
+    function rndChoice(arr) {
+        let index = Math.floor(Math.random() * arr.length);
+        return arr[index];
+    }
+
+    let rndDate = Math.floor(Math.random() * 754)
+
+    let today = new Date().getFullYear();
+    let chosenSaying = rndChoice(sayingArray);
+    let chosenAuth = rndChoice(authArray);
+    let chosenBool = rndChoice(boolArray);
+    let chosenDate = today - rndDate;
+
+    console.log(chosenSaying)
+    console.log(chosenAuth)
+    console.log(chosenDate)
+
+    if (chosenBool === true) {
+        boolText = "I can't believe this could be "
+    } else {
+        boolText = "I'm pretty sure this is "
+    }
+
+    document.getElementById('saying').innerText = chosenSaying
+    document.getElementById('authAndDate').innerText = `${chosenAuth} said this in the year ${chosenDate}`
+    document.getElementById('bool').innerText = boolText + chosenBool + "!!";
+    document.getElementById('block').style.opacity = "1";
+}
+        </script>
+    <style>
+        #container {
+            padding: 20px;
+        }
+        blockquote {
+            opacity: 0;
+            text-align: center;
+            align-self: center;
+            margin:5px auto;
+        }
+
+        #fixedFooter {
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .iconify { width: 24px; height: 24px; }
+        #quoteBox {
+            display: flex;
+            height: 150px;
+            /* border: 2px solid black; */
+            /* border-radius: 20px; */
+            padding:20px;
+            /* text-align: center; */   
+        }
+        small {
+            font-size: 8px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+    <body>
+
+        <div id="container">
+            <header>
+                <h1>Codecademy Project</h1>
+            </header>
+                <h2>Mixed Messages</h2>
+                <hr>
+                <section>
+                    <h3>Background</h3>
+                    <p>For this project, you will build a message generator program. Every time a user runs a program,
+                        they should get a new, randomized output. You’re welcome to take the project in a couple of different
+                        forms, like an astrology generator, inspirational message, or nonsensical jokes. To make your program
+                        truly random, the message that it outputs should be made up of at least three different pieces of data.
+                        Take what you know of JavaScript syntax so far to build the program and customize it to your liking.</p>
+                    <h4>Project Objectives:</h4>
+                    <ul>
+                        <li>Build a message generator program using JavaScript</li>
+                        <li>Use Git version control</li>
+                        <li>Use command line</li>
+                        <li>Develop locally on your computer</li>
+                    </ul>
+                    <h5>Prerequisites:</h5>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Git and GitHub</li>
+                        <li>Command line</li>
+                    </ul>
+                </section>
+            
+                <hr>
+            <section>
+                <h6>Result</h6>
+                <p>Click on <i>"Inspire Me"</i> to generate a random quote,
+                    a random famous person and a
+                    random year.
+                </p>
+                
+                <button type="button" class="btn btn-primary" onclick="mixedM();">Inspire Me</button>
+                <br>
+                <br>
+                    <div id="quoteBox" class="shadow p-3 mb-5 bg-white rounded">
+                        <blockquote id='block' class="blockquote">
+                            <i>
+                                <p class="mb-0" id='saying'></p>
+                            </i>
+                            <footer class="blockquote-footer" ><cite id='authAndDate' title="Source Title"></cite></footer>
+                            
+                            <p><small id="bool"></small></p>
+                        </blockquote>
+                    </div>
+                    <details>
+                        <summary>See the JS</summary>
+                        <pre><code class="language-js">
+function mixed
+    let sayingArray = [
+        '\"The greatest glory in living lies not in never falling, but in rising every time we fall.\"',
+        '\"The way to get started is to quit talking and begin doing.\"',
+        '\"Life is what happens when you are busy making other plans\"',
+        '\"If life were predictable it would cease to be life, and be without flavor.\"',
+        "\"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.\"",
+    ];
+    let authArray = [
+        'Nelson Mandela',
+        'Walt Disney',
+        'John Lennon',
+        'Eleanor Roosevelt',
+        'Oprah Winfrey',
+    ];
+    let boolArray = [
+        true,
+        false
+    ]
+
+    function rndChoice(arr) {
+        let index = Math.floor(Math.random() * arr.length);
+        return arr[index];
+    }
+
+    let rndDate = Math.floor(Math.random() * 754)
+
+    let today = new Date().getFullYear();
+    let chosenSaying = rndChoice(sayingArray);
+    let chosenAuth = rndChoice(authArray);
+    let chosenBool = rndChoice(boolArray);
+    let chosenDate = today - rndDate;
+
+    console.log(chosenSaying)
+    console.log(chosenAuth)
+    console.log(chosenDate)
+
+    if (chosenBool === true) {
+        boolText = "I can't believe this could be "
+    } else {
+        boolText = "I'm pretty sure this is "
+    }
+
+    document.getElementById('saying').innerText = chosenSaying
+    document.getElementById('authAndDate').innerText = `${chosenAuth} said this in the year ${chosenDate}`
+    document.getElementById('bool').innerText = boolText + chosenBool + "!!";
+    document.getElementById('block').style.opacity = "1";
+}
+                        </code></pre>
+                    </details>
+                    <br>
+                    <br>
+                    <br>
+                        
+            </section>
+        </div>
+
+            <footer id='fixedFooter'>
+                <p><a href="https://github.com/github524/git_practice"><span class="iconify" data-icon="logos-github-icon" data-inline="false"></span></a></p>
+
+            </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+    </body>
+
+    </html>
