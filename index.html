@@ -49,10 +49,6 @@
     let chosenBool = rndChoice(boolArray);
     let chosenDate = today - rndDate;
 
-    console.log(chosenSaying)
-    console.log(chosenAuth)
-    console.log(chosenDate)
-
     if (chosenBool === true) {
         boolText = "I can't believe this could be "
     } else {
@@ -68,6 +64,8 @@
     <style>
         #container {
             padding: 20px;
+            max-width: 800px;
+            margin: 1px auto;
         }
         blockquote {
             opacity: 0;
@@ -77,6 +75,7 @@
         }
 
         #fixedFooter {
+            position: fixed;
             bottom: 0;
             width: 100%;
             height: 60px;
@@ -94,9 +93,15 @@
             /* text-align: center; */   
         }
         small {
-            font-size: 8px;
+            font-size: 10px;
             color: blueviolet;
         }
+        summary {
+            font-size: 20px;
+            cursor: pointer;
+        
+        }
+
     </style>
 </head>
 
@@ -106,53 +111,62 @@
             <header>
                 <h1>Codecademy Project</h1>
             </header>
-                <h2>Mixed Messages</h2>
+                <h2> - Mixed Messages</h2>
                 <hr>
                 <section>
-                    <h3>Background</h3>
-                    <p>For this project, you will build a message generator program. Every time a user runs a program,
-                        they should get a new, randomized output. You’re welcome to take the project in a couple of different
-                        forms, like an astrology generator, inspirational message, or nonsensical jokes. To make your program
-                        truly random, the message that it outputs should be made up of at least three different pieces of data.
-                        Take what you know of JavaScript syntax so far to build the program and customize it to your liking.</p>
-                    <h4>Project Objectives:</h4>
-                    <ul>
-                        <li>Build a message generator program using JavaScript</li>
-                        <li>Use Git version control</li>
-                        <li>Use command line</li>
-                        <li>Develop locally on your computer</li>
-                    </ul>
-                    <h5>Prerequisites:</h5>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>Git and GitHub</li>
-                        <li>Command line</li>
-                    </ul>
+                    <details>
+                        
+                            <summary>Project Requirements</summary>
+                            <br>
+                            <p>For this project, you will build a message generator program. Every time a user runs a program,
+                                they should get a new, randomized output. You’re welcome to take the project in a couple of different
+                                forms, like an astrology generator, inspirational message, or nonsensical jokes. To make your program
+                                truly random, the message that it outputs should be made up of at least three different pieces of data.
+                                Take what you know of JavaScript syntax so far to build the program and customize it to your liking.</p>
+                            <h4>Project Objectives:</h4>
+                            <ul>
+                                <li>Build a message generator program using JavaScript</li>
+                                <li>Use Git version control</li>
+                                <li>Use command line</li>
+                                <li>Develop locally on your computer</li>
+                            </ul>
+                            <h5>Prerequisites:</h5>
+                            <ul>
+                                <li>JavaScript</li>
+                                <li>Git and GitHub</li>
+                                <li>Command line</li>
+                            </ul>
+                        
+                    </details>
                 </section>
             
                 <hr>
             <section>
-                <h6>Result</h6>
-                <p>Click on <i>"Inspire Me"</i> to generate a random quote,
-                    a random famous person and a
-                    random year.
-                </p>
-                
-                <button type="button" class="btn btn-primary" onclick="mixedM();">Inspire Me</button>
-                <br>
-                <br>
-                    <div id="quoteBox" class="shadow p-3 mb-5 bg-white rounded">
-                        <blockquote id='block' class="blockquote">
-                            <i>
-                                <p class="mb-0" id='saying'></p>
-                            </i>
-                            <footer class="blockquote-footer" ><cite id='authAndDate' title="Source Title"></cite></footer>
-                            
-                            <p><small id="bool"></small></p>
-                        </blockquote>
-                    </div>
+                <details>
+                    <summary>See it in action!</summary>
+                    <br>
+                    <p>Click on <i>"Inspire Me"</i> to generate a random quote,
+                        a random famous person,
+                        random year and a random boolean.
+                    </p>
+                    
+                    <button type="button" class="btn btn-primary" onclick="mixedM();">Inspire Me</button>
+                    <br>
+                    <br>
+                        <div id="quoteBox" class="shadow p-3 mb-5 bg-white rounded">
+                            <blockquote id='block' class="blockquote">
+                                <i>
+                                    <p class="mb-0" id='saying'></p>
+                                </i>
+                                <footer class="blockquote-footer" ><cite id='authAndDate' title="Source Title"></cite></footer>
+                    
+                                <p><small id="bool"></small></p>
+                            </blockquote>
+                        </div>
+                </details>
+                <hr>
                     <details>
-                        <summary>See the JS</summary>
+                        <summary>JavaScript Code</summary>
                         <pre><code class="language-js">
 function mixed
     let sayingArray = [
@@ -187,10 +201,6 @@ function mixed
     let chosenBool = rndChoice(boolArray);
     let chosenDate = today - rndDate;
 
-    console.log(chosenSaying)
-    console.log(chosenAuth)
-    console.log(chosenDate)
-
     if (chosenBool === true) {
         boolText = "I can't believe this could be "
     } else {
@@ -204,6 +214,7 @@ function mixed
 }
                         </code></pre>
                     </details>
+                    <hr>
                     <br>
                     <br>
                     <br>
