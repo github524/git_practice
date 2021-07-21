@@ -14,9 +14,9 @@
         <!-- GitHub icon from iconify.design -->
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
         <script>
-        // Generates a random saying, attributes it a random author on a random date
+// Generates a random saying, random author, random date and random boolean
     function mixedM() {
-    
+        // Array contaying a list of sayings
     let sayingArray = [
         '\"The greatest glory in living lies not in never falling, but in rising every time we fall.\"',
         '\"The way to get started is to quit talking and begin doing.\"',
@@ -24,6 +24,8 @@
         '\"If life were predictable it would cease to be life, and be without flavor.\"',
         "\"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.\"",
     ];
+
+        //Array containing a list of famous people who have said one of the sayings
     let authArray = [
         'Nelson Mandela',
         'Walt Disney',
@@ -31,30 +33,41 @@
         'Eleanor Roosevelt',
         'Oprah Winfrey',
     ];
+
+        // Array of boolean values to be chosen from at random
     let boolArray = [
         true,
         false
     ]
-
+        // function that takes in an array and returns the value at a random index
     function rndChoice(arr) {
         let index = Math.floor(Math.random() * arr.length);
         return arr[index];
     }
 
+        // select a random number to 1-754
+        // this will be the number of years to take off the current year (today)
     let rndDate = Math.floor(Math.random() * 754)
 
+        // The current year, eg:2021    
     let today = new Date().getFullYear();
+        // variables to store each random choice
     let chosenSaying = rndChoice(sayingArray);
     let chosenAuth = rndChoice(authArray);
     let chosenBool = rndChoice(boolArray);
+
+        // calculate a random year by deducting a random number from current year
     let chosenDate = today - rndDate;
 
+        // determine the text displayed depending on if true or false
+        // is chosen at random
     if (chosenBool === true) {
         boolText = "I can't believe this could be "
     } else {
         boolText = "I'm pretty sure this is "
     }
 
+        // manipulate elemenst in the dom to display variables
     document.getElementById('saying').innerText = chosenSaying
     document.getElementById('authAndDate').innerText = `${chosenAuth} said this in the year ${chosenDate}`
     document.getElementById('bool').innerText = boolText + chosenBool + "!!";
@@ -168,7 +181,9 @@
                     <details>
                         <summary>JavaScript Code</summary>
                         <pre><code class="language-js">
-function mixed
+    // Generates a random saying, random author, random date and random boolean
+    function mixedM() {
+        // Array contaying a list of sayings
     let sayingArray = [
         '\"The greatest glory in living lies not in never falling, but in rising every time we fall.\"',
         '\"The way to get started is to quit talking and begin doing.\"',
@@ -176,6 +191,8 @@ function mixed
         '\"If life were predictable it would cease to be life, and be without flavor.\"',
         "\"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.\"",
     ];
+
+        //Array containing a list of famous people who have said one of the sayings
     let authArray = [
         'Nelson Mandela',
         'Walt Disney',
@@ -183,30 +200,41 @@ function mixed
         'Eleanor Roosevelt',
         'Oprah Winfrey',
     ];
+
+        // Array of boolean values to be chosen from at random
     let boolArray = [
         true,
         false
     ]
-
+        // function that takes in an array and returns the value at a random index
     function rndChoice(arr) {
         let index = Math.floor(Math.random() * arr.length);
         return arr[index];
     }
 
+        // select a random number to 1-754
+        // this will be the number of years to take off the current year (today)
     let rndDate = Math.floor(Math.random() * 754)
 
+        // The current year, eg:2021    
     let today = new Date().getFullYear();
+        // variables to store each random choice
     let chosenSaying = rndChoice(sayingArray);
     let chosenAuth = rndChoice(authArray);
     let chosenBool = rndChoice(boolArray);
+
+        // calculate a random year by deducting a random number from current year
     let chosenDate = today - rndDate;
 
+        // determine the text displayed depending on if true or false
+        // is chosen at random
     if (chosenBool === true) {
         boolText = "I can't believe this could be "
     } else {
         boolText = "I'm pretty sure this is "
     }
 
+        // manipulate elemenst in the dom to display variables
     document.getElementById('saying').innerText = chosenSaying
     document.getElementById('authAndDate').innerText = `${chosenAuth} said this in the year ${chosenDate}`
     document.getElementById('bool').innerText = boolText + chosenBool + "!!";
